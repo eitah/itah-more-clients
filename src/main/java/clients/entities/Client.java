@@ -12,44 +12,43 @@ import javax.persistence.*;
 @Data
 public class Client {
     private int id;
-    private int version;
+//    private int version;
 
-    @Data
-    private class Name {
-        private String first;
-        private String middle;
-        private String last;
-    };
+    private String name;
+//    @Column(name="name")
+//    private Name name;
 //    @Data
 //    public class PhoneNumber{
 //        private String home;
 //        private String work;
 //    };
 
-    private String company;
-    private String profileImage;
-    private String email;
-    private Date birthDate;
+//    private String company;
+//    private String profileImage;
+//    private String email;
+//    private Date birthDate;
 
-    private Address address;
+
+//    @OneToOne(fetch = FetchType.LAZY)
+//    private Address address;
 
     private Date created;
-    private Date modified;
+    private Date updated;
 
     @Id
-    @GeneratedValue
-    public int getId() {return id;}
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        public int getId() {return id;}
     public void setId(int id) {this.id = id;}
-
-    @Version
-    public int getVersion() {return version;}
-    public void setVersion(int version) {this.id = version;}
+//
+//    @Version
+//    public int getVersion() {return version;}
+//    public void setVersion(int version) {this.id = version;}
 
     @CreationTimestamp
     public Date getCreated() {return created;}
     public void setCreated(Date created) {this.created = created;}
 
     @UpdateTimestamp
-    public Date getModified() {return modified;}
-    public void setModified(Date modified) {this.modified = modified;}
+    public Date getUpdated() {return updated;}
+    public void setUpdated(Date updated) {this.updated = updated;}
 }

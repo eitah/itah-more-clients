@@ -22,7 +22,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 flyway {
-    url = 'jdbc:mysql://localhost:3306/clients'
+    url = 'jdbc:mysql://localhost:3306/itah'
 }
 
 bootJar {
