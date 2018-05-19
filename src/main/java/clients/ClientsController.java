@@ -37,4 +37,22 @@ public class ClientsController {
     public Client saveClient(@RequestBody Client clientRequest) {
         return clientService.saveClient(clientRequest);
     }
+
+    @RequestMapping(value="", method = RequestMethod.PUT)
+    public ResponseEntity updateClientById(@RequestBody Client updateRequest) {
+        Boolean exists = clientService.existsById(updateRequest.getId());
+        if (exists) {
+            Client client =  clientService.saveClient(updateRequest);
+            return new ResponseEntity<>(client, HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @RequestMapping(value="", method= RequestMethod.DELETE)
+    public ResponseEntity deleteClientById(@RequestParam Integer id) {
+        clientService.deleteClientById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+
 }
