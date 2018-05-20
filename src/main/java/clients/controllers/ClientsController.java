@@ -1,16 +1,12 @@
-package clients;
+package clients.controllers;
 
 import clients.entities.Client;
-import clients.entities.Name;
-import com.sun.deploy.util.SessionState;
+import clients.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.List;
 import java.util.Optional;
 
 @RestController

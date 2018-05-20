@@ -1,5 +1,6 @@
-package clients;
+package clients.services;
 
+import clients.entities.Address;
 import clients.entities.Client;
 import clients.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;

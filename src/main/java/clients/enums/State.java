@@ -1,4 +1,4 @@
-package clients.entities;
+package clients.enums;
 
 public enum State {
     AL("Alabama"),
